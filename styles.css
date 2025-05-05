@@ -1,9 +1,11 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #111;
@@ -13,6 +15,7 @@ body {
     z-index: 1;
 }
 
+/* Canvas */
 canvas#bgCanvas {
     position: fixed;
     top: 0;
@@ -23,15 +26,17 @@ canvas#bgCanvas {
     pointer-events: none;
 }
 
+/* Header */
 header {
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem 0;
     text-align: center;
-    margin: 0 50px;
     position: relative;
     z-index: 2;
+    margin: 0 50px;
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -58,6 +63,8 @@ nav {
 .nav-links {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: flex-end; /* Align the links to the right */
 }
 
 .nav-links a {
@@ -67,6 +74,7 @@ nav {
     font-size: 16px;
 }
 
+/* Hero Section */
 .hero-text {
     text-align: center;
     margin: 0 175px;
@@ -75,10 +83,6 @@ nav {
     line-height: 1.2;
     position: relative;
     z-index: 2;
-}
-.hero-text, a{
-    color: red;
-    
 }
 
 .hero-button {
@@ -101,6 +105,7 @@ nav {
     color: #000;
 }
 
+/* Footer */
 footer {
     background: #222;
     color: #fff;
@@ -110,12 +115,14 @@ footer {
     z-index: 2;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
+    /* Make the menu toggle button visible */
     .menu-toggle {
         display: block;
     }
 
+    /* Hide the nav links by default on smaller screens */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -123,6 +130,7 @@ footer {
         text-align: center;
     }
 
+    /* Show the nav links when the menu is toggled */
     .nav-links.show {
         display: flex;
         animation: slideDown 0.3s ease;
@@ -132,6 +140,7 @@ footer {
         margin: 0.5rem 0;
     }
 
+    /* Hero text adjustments for smaller screens */
     .hero-text {
         margin: 0 30px;
         padding: 1em 1em 0;
@@ -140,11 +149,13 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* Further adjust hero text size on very small screens */
     .hero-text {
         font-size: 24px;
         margin: 0 10px;
     }
 
+    /* Stack navigation items on smaller screens */
     nav {
         flex-direction: column;
         align-items: flex-start;
@@ -153,8 +164,14 @@ footer {
     .logo {
         margin-bottom: 0.5rem;
     }
+
+    .nav-links {
+        text-align: center;
+        margin-top: 10px;
+    }
 }
 
+/* Animation */
 @keyframes slideDown {
     from {
         opacity: 0;
