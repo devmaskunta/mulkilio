@@ -76,6 +76,10 @@ nav {
     position: relative;
     z-index: 2;
 }
+.hero-text, a{
+    color: red;
+    
+}
 
 .hero-button {
     background-color: transparent;
