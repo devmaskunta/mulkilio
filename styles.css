@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+canvas#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem 0;
+    text-align: center;
+    margin: 0 50px;
+    position: relative;
+    z-index: 2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Plaster', cursive;
+    font-size: 24px;
+    color: #fff;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero-text {
+    text-align: center;
+    margin: 0 175px;
+    padding: 2em 5em 0em 5em;
+    font-size: 53px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-button {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 50px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+
+    .nav-links a {
+        margin: 0.5rem 0;
+    }
+
+    .hero-text {
+        margin: 0 30px;
+        padding: 1em 1em 0;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 24px;
+        margin: 0 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
